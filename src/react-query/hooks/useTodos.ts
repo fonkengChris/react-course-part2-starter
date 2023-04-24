@@ -3,7 +3,6 @@ import { CACHE_KEY_TODOS } from "../constants";
 import APIClient from "../services/apiClient";
 import todoService, { Todo } from "../services/todoService";
 
-const apiclient = new APIClient<Todo>("/todos");
 
 const useTodos = () => {
   return useQuery<Todo[], Error>({
