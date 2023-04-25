@@ -1,18 +1,18 @@
-import useAuth from "./hooks/useAuth";
-import useTasks from "./hooks/useTasks";
+import { useContext } from "react";
+import TasksContext from "./tasksContext";
 
 export interface Task {
   id: number;
   title: string;
 }
 
+const useTasks = () => useContext(TasksContext);
+
 const TaskList = () => {
   const { tasks, dispatch } = useTasks();
-  const { user } = useAuth();
 
   return (
     <>
-      <h3>User: {user}</h3>
       <button
         onClick={() =>
           dispatch({
